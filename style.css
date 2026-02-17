@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #1b1b2f, #3a0ca3);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: pageFade 0.8s ease;
+}
+
+.container {
+background: #2a0a3d;
+  width: 330px;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(186, 104, 200, 0.6);
+  border: 2px solid #ba68c8;
+  animation: cardEnter 0.9s ease;
+}
+
+h1 {
+  color: #f3c4ff;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #d1b3ff;
+  font-size: 14px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  background-color: #f8e1ff;
+}
+
+input:focus {
+  box-shadow: 0 0 10px #ba68c8;
+}
+
+button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #ba68c8, #7b2cbf);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(186, 104, 200, 0.7);
+}
+
+#hasil {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffb3ff;
+}
+
+/* animasi ihir masuk */
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* animasi card masuk */
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* INTRO SCREEN */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1b1b2f, #3a0ca3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: introFade 2.5s ease forwards;
+}
+
+#intro h1 {
+  color: #f3c4ff;
+  font-size: 48px;
+  letter-spacing: 3px;
+  animation: textPop 1.5s ease;
+}
+
+.intro-main {
+  color: #f3c4ff;
+  font-size: 48px;
+  letter-spacing: 3px;
+  animation: textPop 1.5s ease;
+}
+
+.intro-sub {
+  margin-top: 10px;
+  color: #d1b3ff;
+  font-size: 22px;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: textFadeIn 1.2s ease forwards;
+  animation-delay: 1.4s;
+}
+
+
+/* animasi intro hilang */
+@keyframes introFade {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* animasi tulisan */
+@keyframes textPop {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 15px;
+  background-color: #f8e1ff;
+}
+
+/* =========================
+   ANIMASI NYAWA
+========================= */
+#nyawa {
+  transition: transform 0.2s, color 0.2s;
+}
+
+.nyawa-hit {
+  animation: nyawaShake 0.4s;
+  color: #ff4d6d;
+}
+
+@keyframes nyawaShake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-6px); }
+  50%  { transform: translateX(6px); }
+  75%  { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+.nyawa-dead {
+  animation: nyawaDead 0.8s infinite;
+  color: red;
+}
+
+@keyframes nyawaDead {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+#nyawa {
+  margin: 10px 0;
+  font-size: 22px;
+  letter-spacing: 5px;
+  transition: transform 0.2s;
+}
+
+.heart {
+  display: inline-block;
+  animation: heartPop 0.3s ease;
+}
+
+@keyframes heartPop {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 15px;
+  background: linear-gradient(135deg, #f8e1ff, #e0b3ff);
+  color: #3a0ca3;
+  cursor: pointer;
+
+  /* animasi */
+  animation: selectEnter 0.6s ease;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+select:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(186, 104, 200, 0.6);
+}
+
+.mode-change {
+  animation: modePulse 0.4s ease;
+}
+
+@keyframes modePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#mode-screen {
+  background: #2a0a3d;
+  width: 330px;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(186, 104, 200, 0.6);
+  border: 2px solid #ba68c8;
+  animation: cardEnter 0.8s ease;
+}
+
+#mode-screen h1 {
+  margin-bottom: 20px;
+  color: #f3c4ff;
+}
+
+#mode-screen button {
+  margin-top: 15px;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

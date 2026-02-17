@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Guess The Number</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="intro">
+  <h1 class="intro-main">Prikitiw</h1>
+  <h2 class="intro-sub">Guess The Number</h2>
+</div>
+
+
+  <div id="mode-screen">
+  <h1>🎮 Pilih Mode</h1>
+
+  <button onclick="pilihMode('easy')">Easy</button>
+  <button onclick="pilihMode('medium')">Medium</button>
+  <button onclick="pilihMode('hard')">Hard</button>
+</div>
+
+
+  <div class="container" id="game-screen" style="display:none;">
+  <h1>🎯 Guess The Number</h1>
+  <p id="mode-info"></p>
+
+  <div id="nyawa"></div>
+
+  <input type="number" id="tebakan" placeholder="Masukin angka">
+
+  <button onclick="cekAngka()">Cek</button>
+<button onclick="resetGame()">Reset</button>
+<button onclick="backToMenu()">⬅️ Back to Menu</button>
+
+  <p id="hasil"></p>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
